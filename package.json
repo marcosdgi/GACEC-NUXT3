@@ -1,0 +1,37 @@
+{
+  "name": "nuxt-app",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "nuxt build",
+    "dev": "nuxt dev",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare"
+  },
+  "overrides": {
+    "vue": "latest"
+  },
+  "dependencies": {
+    "@nuxt/icon": "^1.5.3",
+    "@nuxtjs/color-mode": "^3.5.2",
+    "@nuxtjs/tailwindcss": "^6.12.1",
+    "@pinia/nuxt": "^0.5.5",
+    "animate.css": "^4.1.1",
+    "chart.js": "^4.4.6",
+    "dayjs": "^1.11.13",
+    "nuxt": "^3.13.0",
+    "ohmyfetch": "^0.4.21",
+    "pinia": "^2.2.4",
+    "pug": "^3.0.3",
+    "vite-plugin-pug-transformer": "^1.0.5",
+    "vue": "latest",
+    "vue-chart.js": "^0.2.0",
+    "vue-final-modal": "^4.5.5",
+    "vue-router": "latest"
+  },
+  "devDependencies": {
+    "@element-plus/nuxt": "^1.0.10",
+    "element-plus": "^2.8.4"
+  }
+}
