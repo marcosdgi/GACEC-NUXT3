@@ -6,22 +6,22 @@
 
 // Prefijo de los endpoints para los actores economicos => api/v1/actorEconomico/ (Aqui va la parte de la ruta para lo que vas a hacer crear o editar)/ ( aca los parametros que requiere la ruta)
 
-export interface IActorEconomicoResponse{
-    id : number;
-    nombre : string;
+export interface IActorEconomicoResponse {
+    id: number;
+    nombre: string;
     numero: number
-    solicitud : string;
-    actividad_principal_CNAE_id:number; //FK
+    solicitud: string;
+    actividad_principal_CNAE_id: number; //FK
     denominacion_id: number; //FK
-    tipo_sujeto_id:number; //FK
-    actividad_economica_principal_id:number; //FK
-    solicitante_id:number; //FK
-    tipo_mypime_id:number;//FK
-    sector_economico_id:number;//FK
-    origen_id:number; //FK
+    tipo_sujeto_id: number; //FK
+    actividad_economica_principal_id: number; //FK
+    solicitante_id: number; //FK
+    tipo_mypime_id: number;//FK
+    sector_economico_id: number;//FK
+    origen_id: number; //FK
     telefono: string;
-    correo_representante:string;
-    domicilio_social : string;
+    correo_representante: string;
+    domicilio_social: string;
     cantidad_socios: number;
     cantidad_trabajadores: number;
     cantidad_estatales: number;
@@ -30,17 +30,17 @@ export interface IActorEconomicoResponse{
     cantidad_desempleados: number;
     cantidad_otros_origenes: number;
     cantidad_ocupados: number;
-    pdl : string;
+    pdl: string;
     inscrito_registro_mercantil: boolean;
-    folio_inscripcion:string;
+    folio_inscripcion: string;
     hoja_inscripcion: string;
-    fecha_incripcion:string;
-    is_exportador:boolean;
-    is_incubado_en_parque_cientifico:boolean;
-    desistimiento_con_carta_de_socios:boolean;
-    is_disuelta:boolean;
-    is_inactiva:boolean;
-    tipoMypime:ITipoMIPYMEResponse;
+    fecha_incripcion: string;
+    is_exportador: boolean;
+    is_incubado_en_parque_cientifico: boolean;
+    desistimiento_con_carta_de_socios: boolean;
+    is_disuelta: boolean;
+    is_inactiva: boolean;
+    tipoMypime: ITipoMIPYMEResponse;
     tipoSujeto: ITipoSujetoResponse;
     solicitante: ISolicitanteResponse;
     actividadEconomicaPrincipalCNAE: IActividadPrincipalCNAEResponse;
@@ -50,70 +50,70 @@ export interface IActorEconomicoResponse{
     origen: IOrigenResponse;
 }
 
-export interface ISolicitanteResponse{
-    id:number;
-    nombre:string;
-    segundo_nombre:string | null;
-    apellido_paterno:string;
-    apellido_materno:string;
-    telefono:string ;
+export interface ISolicitanteResponse {
+    id: number;
+    nombre: string;
+    segundo_nombre: string | null;
+    apellido_paterno: string;
+    apellido_materno: string;
+    telefono: string;
     correo: string | null;
-    carnet:string;
-    tomo:string;
-    folio:string
-    fecha_nacimiento:string;
-    genero:string;
-    direccion:string;
-    tipo_mipyme_id:number; //FK
+    carnet: string;
+    tomo: string;
+    folio: string
+    fecha_nacimiento: string;
+    genero: string;
+    direccion: string;
+    tipo_mipyme_id: number; //FK
     tipoMypime: ITipoMIPYMEResponse;
 
 }
 
 // Prefijo de los endpoints para los tipos de mipymes => api/v1/tiposMiPymes/
-export interface ITipoMIPYMEResponse{
+export interface ITipoMIPYMEResponse {
     id: number;
     nombre: string;
-    descripcion:string;
-    
+    descripcion: string;
+
 }
 // Prefijo de los endpoints para las denominaciones => api/v1/denominaciones/
 
 export interface IDenominacionResponse {
     id: number;
     nombre: string;
-    descripcion : string;
+    descripcion: string;
     created_at: string;
     updated_at: string;
 }
 
 // Prefijo de los endpoints para las actividades econominas => api/v1/actividadEconomica/
-export interface IActividadEconomicaResponse{
+export interface IActividadEconomicaResponse {
     id: number;
     nombre: string;
     codigo: string;
     descripcion: string;
-    created_at:string;
-    updated_at:string;
+    created_at: string;
+    updated_at: string;
 }
 
 // Prefijo de los endpoints para las actividades principales del CNAE => api/v1/actividadPrincipal/
 
-export interface IActividadPrincipalCNAEResponse{
+export interface IActividadPrincipalCNAEResponse {
     id: number;
     nombre: string;
-    descripcion:string;
+    descripcion: string;
 }
 
 
 // Prefijo de los endpoints para los sectores economicos => api/v1/sectorEconomico/
-export interface ISectorEconomicoResponse{
+export interface ISectorEconomicoResponse {
     id: number;
     nombre: string;
     descripcion: string;
 }
 
 // Prefijo de los endpoints para los tipos de sujetos => api/v1/sectorEconomico/
-export interface ITipoSujetoResponse{
+export interface ITipoSujetoResponse {
     id: number;
     nombre: string;
     descripcion: string;
@@ -121,11 +121,36 @@ export interface ITipoSujetoResponse{
     updated_at: string;
 }
 // Prefijo de los enpoints para los origenes => ap1/v1/origen/
-export interface IOrigenResponse{
-    id:number;
-    nombre:string;
-    descripcion:string;
-    created_at:string;
-    updated_at:string;
+export interface IOrigenResponse {
+    id: number;
+    nombre: string;
+    descripcion: string;
+    created_at: string;
+    updated_at: string;
 }
 
+export interface IEstadisticas {
+    statsActores: StatsActores
+    totalTrabajadores: number
+    createdByMonth: CreatedByMonth[]
+    actoresRelacionSolicitante: ActoresRelacionSolicitante
+}
+
+export interface StatsActores {
+    exportadores: number
+    incubados_en_parque: number
+    con_desistimiento: number
+    disueltos: number
+    inactivos: number
+}
+
+export interface CreatedByMonth {
+    month: number
+    count: number
+}
+
+export interface ActoresRelacionSolicitante {
+    solicitantes: number
+    con_solicitante: number
+    sin_solicitante: number
+}

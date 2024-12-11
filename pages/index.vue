@@ -7,6 +7,11 @@ const btnRef3 = ref<ButtonInstance>();
 const btnRef4 = ref<ButtonInstance>();
 const btnRef5 = ref<ButtonInstance>();
 const open = ref<boolean>(false);
+const {$api} = useNuxtApp()
+
+const {data:estadisticas} = useAsyncData(async()=>{
+    return await $api.estadistica.obtenerEstadisticas('2024')
+})
 
 
 </script>

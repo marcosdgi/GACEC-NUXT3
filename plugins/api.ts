@@ -1,4 +1,5 @@
 import { $fetch, type FetchOptions } from "ohmyfetch"
+import type { IEstadisticas } from "~/models/models";
 import ActividadEconomicaPrincipal from "~/repository/modules/actividadEconomicaPrincipal";
 import ActividadEconomicaPrincipalCNAE from "~/repository/modules/actividadEconomicaPrincipalCnae";
 import ActorLocalModule from "~/repository/modules/actorLocal"
@@ -8,7 +9,7 @@ import SectorEconomicoModule from "~/repository/modules/sectorEconomico";
 import SolicitanteModule from "~/repository/modules/solicitante";
 import TipoMipymeModule from "~/repository/modules/tipoMipyme";
 import TipoSujetoModule from "~/repository/modules/tipoSujeto";
-
+import EstadisticasModule from "~/repository/modules/estadisticas";
 interface IApiInstance {
     // Modules
     actorEconomico: ActorLocalModule;
@@ -20,6 +21,7 @@ interface IApiInstance {
     sectorEconomico: SectorEconomicoModule;
     origen: OrigenModule;
     solicitante: SolicitanteModule;
+    estadistica: EstadisticasModule;
 }
 
 
@@ -40,7 +42,8 @@ export default defineNuxtPlugin((nuxtApp) => {
         actividadEconomicaCNAE: new ActividadEconomicaPrincipalCNAE(apiFetcher),
         sectorEconomico: new SectorEconomicoModule(apiFetcher),
         origen: new OrigenModule(apiFetcher),
-        solicitante: new SolicitanteModule(apiFetcher)
+        solicitante: new SolicitanteModule(apiFetcher),
+        estadistica: new EstadisticasModule(apiFetcher),
     }
     return {
         provide: {

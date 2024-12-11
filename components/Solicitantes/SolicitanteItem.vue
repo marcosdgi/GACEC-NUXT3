@@ -124,7 +124,7 @@ const formatDate = (date: Date) => {
 watch(()=>props.solicitante,(newValue)=>solicitanteRef.value=newValue,{deep:true})
 </script>
 <template lang="pug">
-.flex.flex-row.w-full.items-center.h-40.bg-white.p-3.rounded-md.border.border-green-200(class="hover:shadow-xl hover:border-4 hover:border-green-300 transition-all duration-300  h-[620px] overflow-y-auto")
+.flex.flex-row.w-full.items-center.h-auto.bg-white.p-3.rounded-md.border.border-green-200(class="hover:shadow-xl hover:border-4 hover:border-green-300 transition-all duration-3+00  h-[620px] overflow-y-auto")
     .flex.flex-row.items-center.gap-6.h-full
         Icon(name="tabler:user-dollar" size="28").text-green-600
         p Solicitante # {{solicitanteRef.id}}

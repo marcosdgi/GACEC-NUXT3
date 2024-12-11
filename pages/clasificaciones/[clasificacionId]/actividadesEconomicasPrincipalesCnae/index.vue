@@ -22,7 +22,7 @@ const handleCreation = () => {
             ElButton(text @click="$router.push('/')")
                 Icon(name="tabler:arrow-left" size="25").text-green-800
             Icon(name="tabler:align-box-bottom-center" size="35").text-green-400
-            p.text-3xl.font-semibold.text-green-800 Actividades económicas principales
+            p.text-3xl.font-semibold.text-green-800 Actividades económicas principales (CNAE)
             ElTooltip(content="Agregar nuevo sector económico" placement="top-start")
                 ElButton(type="primary" circle @click="handleDrawerOpen" size="large").ml-2.shadow-xl
                     Icon(name="tabler:plus" size="35")
